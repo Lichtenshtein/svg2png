@@ -27,8 +27,12 @@ jobs:
     - name: Build Solution (Release|x64)
       run: msbuild svg2png.sln /p:Configuration=Release /p:Platform=x64 /t:Rebuild /verbosity:minimal
 
+    - name: Archive exe files with 7z
+      run: |
+        7z a svg2png.7z D:\a\svg2png\svg2png\_bin\Release_x64\*.exe
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: svg2png-build-output
-        path: D:\a\svg2png\svg2png\_bin\Release_x64
+        path: svg2png.7z
