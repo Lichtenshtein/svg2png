@@ -31,4 +31,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: svg2png-build-output
-        path: src/Release/
+        path: D:\a\svg2png\svg2png\_bin\Release_x64
